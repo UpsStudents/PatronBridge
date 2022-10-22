@@ -28,6 +28,24 @@ public class Main {
         else{
             System.out.println("No es posible inscribir al estudiante");
         }
+
+        var inscripcion2 = new InscripcionTecnologia(new InscripcionMovilImpl());
+        inscripcion2.setNivelEstudio(NivelEstudio.TECNOLOGIA);
+        if(inscripcion2.controlNivelEstudio()){
+            inscripcion2.inscribir();
+        }
+        else{
+            System.out.println("No es posible inscribir al estudiante");
+        }
+
+        var inscripcion3 = new InscripcionPosgrado(new InscripcionLineaImpl());
+        inscripcion3.setNivelEstudio(NivelEstudio.POSGRADO);
+        if(inscripcion3.controlNivelEstudio()){
+            inscripcion3.inscribir();
+        }
+        else{
+            System.out.println("No es posible inscribir al estudiante");
+        }
         
         
     }
