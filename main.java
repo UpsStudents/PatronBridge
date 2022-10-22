@@ -26,40 +26,9 @@ public class PdsUnidad02Ooms {
 
     public static void main(String[] args) {
         System.out.println("Hello World!");
-        composite();
-        adapter();
         bridge();
-        facade();
-        decorator();
     }
     
-    public static void composite(){
-        System.out.println("Composite");
-        
-        var linea1 = new Linea();
-        var linea2 = new Linea();
-        var circulo1 = new Circulo();
-        var dibujo1 = new Dibujo();
-        var dibujo2 = new Dibujo();
-                
-        dibujo1.add(linea1);
-        dibujo1.add(circulo1);        
-        
-        dibujo2.add(dibujo1);
-        dibujo2.add(linea2);
-        System.out.println(dibujo2.getPeso());
-        
-        
-    }
-    
-    public static void adapter(){
-        System.out.println("Adapter");
-        
-        var pagoBanco=new Adapter();
-                
-        System.out.println(pagoBanco.pagado(1, 10));
-        
-    }
     
     public static void bridge(){
         System.out.println("Bridge");
@@ -75,22 +44,5 @@ public class PdsUnidad02Ooms {
         
     }
     
-    public static void facade(){
-        System.out.println("facade");
-        var personaFacade = new PersonaFacade();
-        System.out.println(personaFacade.info(10, TipoPersona.DOCENTE));
-
-    }
-    
-    public static void decorator(){
-        System.out.println("Decorator");
-        var notificacionEmail = new NotificacionDecorator();
-        notificacionEmail.getNotificaciones().add(new NotificacionHTML());
-        var notificacionConEmail = new NotificacionConEmail();
-        notificacionConEmail.setCorreo("mortizo@ups.edu.ec");
-        notificacionEmail.getNotificaciones().add(notificacionConEmail);
-
-        System.out.println(notificacionEmail.send());
-    }    
     
 }
